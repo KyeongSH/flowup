@@ -1,0 +1,666 @@
+/* ============================================================
+   다우오피스 헬프데스크 스타일
+   플로우업 매뉴얼 · Daou Office style
+   ============================================================ */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+:root {
+  --bg: #ffffff;
+  --sidebar: #f7f8fa;
+  --ink: #22252b;
+  --ink-2: #454952;
+  --ink-3: #6b7280;
+  --ink-4: #9ca3af;
+  --line: #e6e8ec;
+  --line-soft: #f0f1f4;
+
+  /* Daou primary — soft blue */
+  --brand: #2b6cb0;
+  --brand-hover: #2c5282;
+  --brand-soft: #ebf3fb;
+  --brand-line: #bee0f5;
+
+  /* Accents */
+  --accent-green: #38a169;
+  --accent-green-soft: #f0fdf4;
+  --accent-yellow: #d97706;
+  --accent-yellow-soft: #fef7e6;
+  --accent-red: #e53e3e;
+  --accent-red-soft: #fef2f2;
+
+  --f-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --f-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px -4px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Top navbar ---------- */
+.dw-topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.dw-topbar .brand {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dw-topbar .brand .logo {
+  width: 28px; height: 28px;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-mono);
+  font-weight: 800;
+  font-size: 14px;
+}
+.dw-topbar .brand small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-3);
+  margin-left: 4px;
+}
+.dw-topbar nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+.dw-topbar nav a {
+  color: var(--ink-2);
+  padding: 4px 0;
+}
+.dw-topbar nav a.active {
+  color: var(--brand);
+  font-weight: 600;
+  border-bottom: 2px solid var(--brand);
+}
+
+/* ---------- Breadcrumb ---------- */
+.dw-breadcrumb {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 32px 0;
+  font-size: 13px;
+  color: var(--ink-3);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.dw-breadcrumb a { color: var(--ink-3); }
+.dw-breadcrumb .sep { color: var(--ink-4); }
+.dw-breadcrumb .current { color: var(--ink); font-weight: 500; }
+
+/* ---------- Layout ---------- */
+.dw-layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 32px 96px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ---------- Sidebar (Article list) ---------- */
+.dw-sidebar {
+  position: sticky;
+  top: 80px;
+  background: var(--sidebar);
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid var(--line);
+}
+.dw-sidebar h4 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.dw-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dw-sidebar li {
+  margin: 0;
+  border-radius: 5px;
+}
+.dw-sidebar li a {
+  display: block;
+  padding: 8px 10px;
+  color: var(--ink-2);
+  font-size: 14px;
+  border-radius: 5px;
+  line-height: 1.5;
+  transition: background 0.1s;
+}
+.dw-sidebar li a:hover {
+  background: #eef1f5;
+  text-decoration: none;
+}
+.dw-sidebar li.active a {
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* ---------- Article ---------- */
+.dw-article {
+  max-width: 780px;
+}
+.dw-article .article-header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.dw-article .article-header .badge {
+  display: inline-block;
+  background: var(--brand-soft);
+  color: var(--brand);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.dw-article h1 {
+  font-size: 30px;
+  margin: 0 0 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.dw-article .article-meta {
+  font-size: 13px;
+  color: var(--ink-3);
+  display: flex;
+  gap: 16px;
+}
+
+.dw-article h2 {
+  font-size: 22px;
+  margin: 48px 0 16px;
+  padding: 16px 0 12px;
+  border-top: 3px solid var(--ink);
+  font-weight: 700;
+  line-height: 1.4;
+}
+.dw-article h2:first-of-type { margin-top: 8px; }
+
+.dw-article h3 {
+  font-size: 17px;
+  margin: 32px 0 10px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.dw-article h4 {
+  font-size: 15px;
+  margin: 20px 0 6px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.dw-article p {
+  margin: 8px 0 14px;
+  color: var(--ink-2);
+}
+
+.dw-article ul,
+.dw-article ol {
+  margin: 8px 0 16px;
+  padding-left: 22px;
+  color: var(--ink-2);
+}
+.dw-article ul li,
+.dw-article ol li { margin: 4px 0; }
+.dw-article ul ul,
+.dw-article ol ol { margin: 4px 0; }
+
+.dw-article strong { color: var(--ink); font-weight: 600; }
+
+.dw-article hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
+}
+
+/* ---------- Numbered heading (다우오피스 특유) ---------- */
+.dw-numbered {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 48px 0 16px !important;
+  padding: 16px 0 12px !important;
+  border-top: 3px solid var(--ink) !important;
+}
+.dw-numbered .n {
+  font-family: var(--f-mono);
+  font-size: 20px;
+  color: var(--brand);
+  font-weight: 800;
+}
+
+/* ---------- STEP box ---------- */
+.dw-step {
+  background: #f7f8fa;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin: 20px 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+.dw-step .label {
+  background: var(--ink);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.dw-step.deep {
+  background: #eef4fb;
+}
+.dw-step.deep .label {
+  background: var(--brand);
+}
+
+/* ---------- Path pill ---------- */
+.dw-path {
+  background: #f4f6f9;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  margin: 8px 0 12px;
+  color: var(--ink-2);
+  display: inline-block;
+}
+.dw-path b { color: var(--brand); font-weight: 600; }
+.dw-path .bracket { color: var(--ink); font-weight: 600; }
+
+/* ---------- Emoji section title ---------- */
+.dw-emo {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 28px 0 8px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dw-emo .emo {
+  font-size: 20px;
+}
+
+/* ---------- Tip / Callout boxes ---------- */
+.dw-tip {
+  background: #f5faf5;
+  border-left: 4px solid var(--accent-green);
+  padding: 12px 18px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #285f3f;
+}
+.dw-tip::before {
+  content: "💡 TIP · ";
+  font-weight: 700;
+  color: var(--accent-green);
+}
+.dw-note {
+  background: var(--brand-soft);
+  border-left: 4px solid var(--brand);
+  padding: 12px 18px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #1e4a7a;
+}
+.dw-note::before {
+  content: "ℹ️ 참고 · ";
+  font-weight: 700;
+  color: var(--brand);
+}
+.dw-warn {
+  background: var(--accent-yellow-soft);
+  border-left: 4px solid var(--accent-yellow);
+  padding: 12px 18px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #92450e;
+}
+.dw-warn::before {
+  content: "⚠️ 주의 · ";
+  font-weight: 700;
+  color: var(--accent-yellow);
+}
+.dw-must {
+  background: var(--accent-red-soft);
+  border-left: 4px solid var(--accent-red);
+  padding: 12px 18px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #8a1f1f;
+}
+.dw-must::before {
+  content: "🔒 필수 · ";
+  font-weight: 700;
+  color: var(--accent-red);
+}
+.dw-tip ul, .dw-note ul, .dw-warn ul, .dw-must ul {
+  margin: 6px 0 0 4px;
+  padding-left: 18px;
+  color: inherit;
+}
+.dw-tip li, .dw-note li, .dw-warn li, .dw-must li { margin: 2px 0; }
+
+/* ---------- Guide link (📑 스타일) ---------- */
+.dw-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef4fb;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--brand) !important;
+  font-weight: 500;
+  margin: 0 2px;
+  border: 1px solid var(--brand-line);
+}
+.dw-guide-link:hover {
+  background: #dbe9f5;
+  text-decoration: none !important;
+}
+.dw-guide-link::before { content: "📑 "; }
+
+/* ---------- Capture placeholder ---------- */
+.dw-capture {
+  border: 1.5px dashed #cbd2dc;
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 32px 20px;
+  margin: 20px 0;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.dw-capture .fig {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.dw-capture .title {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+.dw-capture .hint {
+  color: var(--ink-3);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.dw-capture .hint .hl {
+  display: inline-block;
+  border: 1.5px solid #e53e3e;
+  color: #e53e3e;
+  padding: 0 6px;
+  border-radius: 2px;
+  font-weight: 600;
+  margin: 0 2px;
+}
+
+/* ---------- Tables ---------- */
+.dw-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 14px;
+}
+.dw-article th,
+.dw-article td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  color: var(--ink-2);
+}
+.dw-article th {
+  background: #f7f8fa;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 13px;
+}
+.dw-article td.c, .dw-article th.c { text-align: center; }
+
+/* ---------- Cards grid (for landing) ---------- */
+.dw-hero {
+  background: linear-gradient(180deg, var(--brand-soft) 0%, transparent 100%);
+  border-bottom: 1px solid var(--line);
+  padding: 64px 32px 48px;
+  text-align: center;
+}
+.dw-hero .eyebrow {
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.dw-hero h1 {
+  font-size: 40px;
+  margin: 0 0 12px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.dw-hero p {
+  color: var(--ink-2);
+  font-size: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.dw-hero .searchbar {
+  margin: 32px auto 0;
+  max-width: 540px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--ink-3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.dw-guides {
+  max-width: 1120px;
+  margin: 48px auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.dw-guides .g-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  color: var(--ink);
+  display: block;
+}
+.dw-guides .g-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--brand);
+  text-decoration: none;
+}
+.dw-guides .g-card .icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.dw-guides .g-card h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.dw-guides .g-card p {
+  color: var(--ink-3);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  min-height: 44px;
+}
+.dw-guides .g-card .meta {
+  font-size: 12px;
+  color: var(--ink-4);
+  border-top: 1px solid var(--line-soft);
+  padding-top: 10px;
+}
+
+/* ---------- TOC (in article) ---------- */
+.dw-toc {
+  background: #f7f8fa;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0 32px;
+  border: 1px solid var(--line);
+}
+.dw-toc h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.dw-toc ol {
+  margin: 0;
+  padding-left: 20px;
+  columns: 2;
+  column-gap: 24px;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+.dw-toc ol li {
+  padding: 3px 0;
+  break-inside: avoid;
+}
+.dw-toc ol li a {
+  color: var(--ink-2);
+}
+.dw-toc ol li a:hover { color: var(--brand); }
+
+/* ---------- Footer ---------- */
+.dw-footer {
+  background: #f7f8fa;
+  border-top: 1px solid var(--line);
+  padding: 32px;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.dw-footer .contacts {
+  margin-top: 8px;
+  color: var(--ink-4);
+  font-size: 12px;
+}
+.dw-footer .contacts span { margin: 0 10px; }
+
+/* ---------- Back / print ---------- */
+.print-btn {
+  position: fixed;
+  top: 74px;
+  right: 20px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-family: var(--f-sans);
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 90;
+  font-weight: 600;
+}
+.print-btn:hover { background: var(--brand-hover); }
+
+/* ---------- Print ---------- */
+@page { size: A4; margin: 16mm 14mm 18mm; }
+@media print {
+  .dw-topbar, .dw-sidebar, .print-btn, .dw-breadcrumb, .dw-footer { display: none !important; }
+  .dw-layout { grid-template-columns: 1fr; max-width: none; padding: 0; }
+  .dw-article { max-width: none; }
+  .dw-capture, .dw-tip, .dw-note, .dw-warn, .dw-must, table { break-inside: avoid; }
+  .dw-numbered, .dw-article h2 { break-after: avoid; }
+  .dw-hero { padding: 20mm 0; }
+  .dw-guides { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .dw-layout { grid-template-columns: 1fr; }
+  .dw-sidebar { position: static; }
+  .dw-guides { grid-template-columns: 1fr; padding: 0 20px; }
+  .dw-hero h1 { font-size: 30px; }
+  .dw-hero { padding: 40px 20px 32px; }
+  .dw-toc ol { columns: 1; }
+  .dw-topbar { padding: 12px 16px; }
+  .dw-topbar nav { display: none; }
+}

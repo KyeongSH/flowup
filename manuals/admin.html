@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>플로우업 관리자 매뉴얼 · 이젠아카데미</title>
+<link rel="stylesheet" href="../assets/style.css?v=5">
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨 PDF로 저장</button>
+
+<div class="doc-layout">
+
+<!-- ================ TOC (side) ================ -->
+<nav class="toc side" aria-label="목차">
+  <div class="toc-head">
+    <h2>목차</h2>
+    <a class="home-btn" href="../index.html" aria-label="매뉴얼 목록으로" title="매뉴얼 목록으로">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>
+    </a>
+  </div>
+  <ol>
+    <li><a href="#ch1"><span class="n">1장</span><span>플로우업 개요</span></a></li>
+    <li><a href="#ch2"><span class="n">2장</span><span>로그인 및 기본 화면</span></a></li>
+    <li><a href="#ch3"><span class="n">3장</span><span>관리자 대시보드</span></a></li>
+    <li><a href="#ch4"><span class="n">4장</span><span>강의·교육과정 관리</span></a></li>
+    <li><a href="#ch5"><span class="n">5장</span><span>학생 관리</span></a></li>
+    <li><a href="#ch6"><span class="n">6장</span><span>강사 관리</span></a></li>
+    <li><a href="#ch7"><span class="n">7장</span><span>클래스룸 운영</span></a></li>
+    <li><a href="#ch8"><span class="n">8장</span><span>콘텐츠 관리</span></a></li>
+    <li><a href="#ch9"><span class="n">9장</span><span>과정 TODO 관리</span></a></li>
+    <li><a href="#ch10"><span class="n">10장</span><span>운영자별 업무 가이드</span></a></li>
+    <li><a href="#ch11"><span class="n">11장</span><span>시기별 운영 체크리스트</span></a></li>
+    <li><a href="#ch12"><span class="n">12장</span><span>오류 및 FAQ</span></a></li>
+  </ol>
+</nav>
+
+<div class="page">
+
+<a class="back-link" href="../index.html">← 매뉴얼 목록으로</a>
+
+<h1 class="doc-title" style="font-size:32px; margin:8px 0 32px; padding:0; border:none;">이젠아카데미 플로우업(FLOWUP) 관리자 사용 매뉴얼</h1>
+
+<!-- ============================================================
+     1장. 플로우업 개요
+     ============================================================ -->
+<h1 class="chapter" id="ch1"><span class="num">CHAPTER 01</span>플로우업 개요</h1>
+
+<h2>1.1 플로우업의 목적</h2>
+<p>플로우업(FLOWUP)은 이젠아카데미에서 운영하는 <strong>직업훈련 통합 관리 플랫폼</strong>입니다. 교육과정 개설부터 훈련생 모집, 클래스룸 운영, 콘텐츠 관리, 훈련 종료 후 자료 보관까지 전 과정을 단일 시스템에서 처리할 수 있도록 지원합니다.</p>
+
+<h2>1.2 주요 사용자</h2>
+<table>
+  <thead>
+    <tr><th style="width:22%">구분</th><th>역할</th><th>주요 사용 메뉴</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>총괄 관리자</td><td>시스템 전체 운영 관리, 권한 부여</td><td>전체 메뉴</td></tr>
+    <tr><td>운영 담당자</td><td>과정 개설, 훈련생·강사 배정, 커뮤니티 관리</td><td>강의, 학생, 강사, 클래스룸</td></tr>
+    <tr><td>행정 담당자</td><td>훈련생 등록, 출결·수료 처리, 자료 다운로드</td><td>학생, TODO, 콘텐츠</td></tr>
+    <tr><td>교강사</td><td>담당 과정 수업 운영, 자료 등록, 공지</td><td>클래스룸, 콘텐츠, 커뮤니티</td></tr>
+    <tr><td>취업지원 담당자</td><td>수료생 정보 조회, 사후 관리</td><td>학생, 콘텐츠</td></tr>
+  </tbody>
+</table>
+
+<h2>1.3 관리자 사이트 접속 정보</h2>
+<ul>
+  <li><strong>접속 주소:</strong> <code>https://admin.ezengn.flowup.co.kr/</code></li>
+  <li><strong>권장 브라우저:</strong> Chrome, Edge 최신 버전 (Internet Explorer 미지원)</li>
+  <li><strong>권장 해상도:</strong> 1440×900 이상</li>
+  <li><strong>접속 계정:</strong> 담당자 확인 필요 <span class="tag must">담당자 확인 필요</span></li>
+</ul>
+
+<div class="callout must">
+  <span class="label">필수</span> 관리자 계정은 개인별로 발급되며 공유·양도할 수 없습니다. 인수인계 시 반드시 기존 계정 회수 및 신규 계정 발급 절차를 거쳐야 합니다.
+</div>
+
+<h2>1.4 개인정보 보호 주의사항</h2>
+<div class="callout warn">
+  <span class="label">주의</span>
+  <ul>
+    <li>훈련생·강사의 이름·연락처·이메일·주민등록번호·계좌정보는 <strong>업무 목적 외 조회·다운로드 금지</strong></li>
+    <li>화면 캡처·문서 공유 시 <strong>개인정보 마스킹 필수</strong></li>
+    <li>퇴근 시 반드시 <strong>로그아웃</strong> 및 화면 잠금</li>
+    <li>공용 PC에서 로그인 후 자동 로그인·비밀번호 저장 기능 사용 금지</li>
+  </ul>
+</div>
+
+<!-- ============================================================
+     2장. 로그인 및 기본 화면
+     ============================================================ -->
+<h1 class="chapter" id="ch2"><span class="num">CHAPTER 02</span>로그인 및 기본 화면</h1>
+
+<h2>2.1 관리자 사이트 접속</h2>
+<ol class="steps">
+  <li>웹 브라우저 주소창에 <code>https://admin.ezengn.flowup.co.kr/</code> 를 입력합니다.</li>
+  <li>로그인 화면이 표시되면 아이디와 비밀번호를 입력합니다.</li>
+  <li>'로그인' 버튼을 선택합니다.</li>
+</ol>
+
+<div class="capture">
+  <div class="fig-num">그림 2-1</div>
+  <div class="fig-title">플로우업 관리자 로그인 화면</div>
+  <div class="fig-hint">
+    <span class="highlight">아이디 입력창</span> · <span class="highlight">비밀번호 입력창</span> · <span class="highlight">로그인 버튼</span> 강조 표시<br>
+    ※ 실제 로그인 화면 캡처 후 삽입 (개인 계정정보는 모자이크 처리)
+  </div>
+</div>
+
+<h2>2.2 로그인 오류 발생 시 확인사항</h2>
+<table>
+  <thead>
+    <tr><th>증상</th><th>확인사항</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>아이디 또는 비밀번호가 일치하지 않습니다</td><td>대·소문자, 한/영 전환, Caps Lock 상태 확인</td></tr>
+    <tr><td>비밀번호 5회 이상 오류</td><td>계정 잠금 가능성 → 담당자 확인 필요</td></tr>
+    <tr><td>페이지가 열리지 않음</td><td>네트워크 연결 상태 및 사내 방화벽 확인</td></tr>
+    <tr><td>권한이 없다는 메시지</td><td>계정 권한 발급 여부 담당자 확인 필요</td></tr>
+  </tbody>
+</table>
+
+<h2>2.3 관리자 대시보드 기본 구성</h2>
+<div class="capture">
+  <div class="fig-num">그림 2-2</div>
+  <div class="fig-title">관리자 대시보드 전체 화면</div>
+  <div class="fig-hint">
+    ① 좌측 메뉴 영역 · ② 상단 요약 통계 · ③ 최근 개강과정 리스트 · ④ 과정 TODO · ⑤ 커뮤니티/콘텐츠
+  </div>
+</div>
+
+<h2>2.4 로그아웃 및 세션 관리</h2>
+<ol class="steps">
+  <li>화면 우측 상단의 계정 아이콘(또는 사용자 이름)을 선택합니다.</li>
+  <li>드롭다운 메뉴에서 '로그아웃'을 선택합니다. <span class="tag info">위치 확인 필요</span></li>
+  <li>로그인 화면으로 돌아가면 정상 로그아웃 완료입니다.</li>
+</ol>
+
+<div class="callout warn">
+  <span class="label">주의</span> 일정 시간 이상 미사용 시 자동 세션 종료됩니다. 작성 중이던 내용이 저장되지 않을 수 있으므로 <strong>중요 작업은 수시로 저장</strong>합니다. (자동 종료 시간 <span class="tag must">담당자 확인 필요</span>)
+</div>
+
+<!-- ============================================================
+     3장. 관리자 대시보드
+     ============================================================ -->
+<h1 class="chapter" id="ch3"><span class="num">CHAPTER 03</span>관리자 대시보드</h1>
+
+<h2>3.1 요약 통계 영역</h2>
+<p>로그인 직후 표시되는 대시보드 상단에는 시스템 전체 현황이 숫자로 표시됩니다. 매일 업무 시작 시 확인하는 것을 권장합니다.</p>
+
+<div class="capture">
+  <div class="fig-num">그림 3-1</div>
+  <div class="fig-title">대시보드 요약 통계 영역</div>
+  <div class="fig-hint">
+    등록된 강의 / 모집 중 강의 / 훈련 중 강의 / 등록된 학생 수 / 등록된 강사 수 카드 위치 강조
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>항목</th><th>의미</th><th>확인 시점</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>등록된 강의</td><td>시스템에 등록된 전체 과정 수</td><td>수시</td></tr>
+    <tr><td>모집 중 강의</td><td>현재 훈련생을 모집 중인 과정 수</td><td>매일 오전</td></tr>
+    <tr><td>훈련 중 강의</td><td>개강하여 훈련이 진행 중인 과정 수</td><td>매일 오전</td></tr>
+    <tr><td>등록된 학생 수</td><td>시스템에 등록된 전체 훈련생 누적 수</td><td>주 1회</td></tr>
+    <tr><td>등록된 강사 수</td><td>시스템에 등록된 전체 강사 누적 수</td><td>월 1회</td></tr>
+  </tbody>
+</table>
+
+<h2>3.2 최근 개강과정 확인</h2>
+<p>최근 개강한 과정 목록에는 다음 정보가 표시됩니다: 강의명, 회차, 훈련기간, 모집인원, 등록인원, 훈련일수. 개강 직후 <strong>모집인원과 등록인원의 차이</strong>를 확인하는 것이 중요합니다.</p>
+
+<div class="capture">
+  <div class="fig-num">그림 3-2</div>
+  <div class="fig-title">최근 개강과정 리스트</div>
+  <div class="fig-hint">강의명 · 회차 · 훈련기간 · 모집/등록인원 · 훈련일수 컬럼</div>
+</div>
+
+<h2>3.3 과정 TODO 상태 확인</h2>
+<p>대시보드에서 각 과정의 TODO 상태를 4단계로 확인할 수 있습니다.</p>
+<table>
+  <thead>
+    <tr><th class="center" style="width:15%">상태</th><th>의미</th><th>대응</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="center"><span class="tag info">대기</span></td><td>등록되었으나 아직 착수하지 않은 업무</td><td>담당자 배정 및 시작</td></tr>
+    <tr><td class="center"><span class="tag warn">진행 중</span></td><td>현재 진행 중인 업무</td><td>주기적 진행 확인</td></tr>
+    <tr><td class="center"><span class="tag ok">완료</span></td><td>완료 처리된 업무</td><td>결과물 확인</td></tr>
+    <tr><td class="center"><span class="tag must">보류</span></td><td>일시 중단된 업무</td><td>보류 사유 및 재개 일정 확인</td></tr>
+  </tbody>
+</table>
+
+<h2>3.4 최근 커뮤니티 게시물</h2>
+<p>강의명·채널·글 제목·작성자·작성일이 표시되어 담당 과정의 최근 활동을 빠르게 확인할 수 있습니다.</p>
+
+<h2>3.5 최근 등록 콘텐츠</h2>
+<p>강의명·콘텐츠 유형·제목·링크가 표시됩니다. Zoom 녹화영상, YouTube 링크 등의 등록 여부를 확인합니다.</p>
+
+<div class="capture">
+  <div class="fig-num">그림 3-3</div>
+  <div class="fig-title">대시보드 커뮤니티·콘텐츠 영역</div>
+  <div class="fig-hint">최근 게시물 리스트 · 최근 등록 콘텐츠 리스트 위치 강조</div>
+</div>
+
+<!-- ============================================================
+     4장. 강의·교육과정 관리
+     ============================================================ -->
+<h1 class="chapter" id="ch4"><span class="num">CHAPTER 04</span>강의·교육과정 관리</h1>
+
+<h2>4.1 전체 강의 조회</h2>
+
+<h4>기능 목적</h4>
+<p>시스템에 등록된 모든 교육과정을 조회하고, 상태별·기간별로 검색합니다. 과정 운영의 시작점이 되는 화면입니다.</p>
+
+<h4>사용 대상</h4>
+<p>운영 담당자, 총괄 관리자</p>
+
+<h4>접근 경로</h4>
+<span class="path">관리자 대시보드 <span class="sep">→</span> 강의관리 <span class="sep">→</span> 전체 강의 <span class="tag info">경로 확인 필요</span></span>
+
+<h4>진행 순서</h4>
+<ol class="steps">
+  <li>좌측 메뉴에서 '강의관리'를 선택합니다.</li>
+  <li>하위 메뉴에서 '전체 강의'를 선택합니다.</li>
+  <li>검색 조건(과정명, 상태, 기간)을 입력합니다.</li>
+  <li>'검색' 버튼을 선택합니다.</li>
+  <li>조회된 목록에서 원하는 과정을 선택하여 상세정보를 확인합니다.</li>
+</ol>
+
+<div class="capture">
+  <div class="fig-num">그림 4-1</div>
+  <div class="fig-title">전체 강의 목록 화면</div>
+  <div class="fig-hint">
+    <span class="highlight">① 과정 검색</span> → <span class="highlight">② 대상 과정 선택</span> → <span class="highlight">③ 과정 상세정보 확인</span>
+  </div>
+</div>
+
+<h2>4.2 신규 과정 등록</h2>
+
+<h4>기능 목적</h4>
+<p>신규 교육과정을 시스템에 등록합니다. 훈련기간·회차·모집인원 등 기본정보를 설정하고, 개강 전 강사·훈련생 배정의 기준이 됩니다.</p>
+
+<h4>접근 경로</h4>
+<span class="path">강의관리 <span class="sep">→</span> 전체 강의 <span class="sep">→</span> '+ 신규 등록' 버튼 <span class="tag info">버튼명 확인 필요</span></span>
+
+<h4>입력 항목</h4>
+<table>
+  <thead>
+    <tr><th>항목명</th><th class="center" style="width:12%">필수 여부</th><th>입력 방법</th><th>입력 예시</th><th>주의사항</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>과정명</td><td class="center"><span class="tag must">필수</span></td><td>직접 입력</td><td>웹풀스택 개발자 양성과정</td><td>NCS 승인 명칭과 일치</td></tr>
+    <tr><td>회차</td><td class="center"><span class="tag must">필수</span></td><td>숫자 입력</td><td>3</td><td>중복 회차 확인</td></tr>
+    <tr><td>훈련기간</td><td class="center"><span class="tag must">필수</span></td><td>날짜 선택</td><td>2026-10-01 ~ 2027-03-31</td><td>공휴일·주말 반영 여부 확인</td></tr>
+    <tr><td>훈련일수</td><td class="center"><span class="tag must">필수</span></td><td>숫자 입력</td><td>120일</td><td>실제 훈련일 기준</td></tr>
+    <tr><td>모집인원</td><td class="center"><span class="tag must">필수</span></td><td>숫자 입력</td><td>25명</td><td>NCS 승인 인원 이내</td></tr>
+    <tr><td>과정 유형</td><td class="center"><span class="tag must">필수</span></td><td>드롭다운 선택</td><td>K-디지털 트레이닝</td><td>-</td></tr>
+    <tr><td>담당 강사</td><td class="center"><span class="tag warn">선택</span></td><td>강사 검색·선택</td><td>홍**</td><td>추후 배정 가능</td></tr>
+    <tr><td>과정 소개</td><td class="center"><span class="tag warn">선택</span></td><td>텍스트 입력</td><td>-</td><td>-</td></tr>
+  </tbody>
+</table>
+
+<div class="callout must">
+  <span class="label">필수</span> 위 입력 항목은 실제 시스템 화면 확인 후 정확한 필드명·필수 여부로 업데이트해야 합니다. <span class="tag must">담당자 확인 필요</span>
+</div>
+
+<div class="capture">
+  <div class="fig-num">그림 4-2</div>
+  <div class="fig-title">신규 과정 등록 화면</div>
+  <div class="fig-hint">입력 필드 영역 파란 박스 · 저장 버튼 빨간 박스 강조</div>
+</div>
+
+<h4>처리 결과</h4>
+<p>정상 저장 시 '등록되었습니다' 메시지가 표시되고, 전체 강의 목록에 해당 과정이 추가됩니다.</p>
+
+<h4>주의사항</h4>
+<div class="callout warn">
+  <span class="label">주의</span>
+  <ul>
+    <li>훈련기간·회차는 등록 후 변경 시 <strong>이미 등록된 훈련생·강사·수업자료에 영향</strong>을 줄 수 있습니다.</li>
+    <li>모집인원은 실제 등록 가능 인원의 상한이므로 신중하게 입력합니다.</li>
+    <li>과정 유형은 저장 후 변경이 제한될 수 있습니다. <span class="tag must">담당자 확인 필요</span></li>
+  </ul>
+</div>
+
+<h2>4.3 모집 중·훈련 중 과정 조회</h2>
+<ol class="steps">
+  <li>'강의관리 → 모집 중 강의' 또는 '훈련 중 강의' 메뉴를 선택합니다.</li>
+  <li>조회된 목록에서 상태(모집 중 / 훈련 중 / 종료)를 확인합니다.</li>
+  <li>필요 시 과정명을 선택하여 상세정보로 이동합니다.</li>
+</ol>
+
+<h2>4.4 과정정보 수정</h2>
+<ol class="steps">
+  <li>전체 강의 목록에서 수정할 과정을 선택합니다.</li>
+  <li>상세정보 화면에서 '수정' 버튼을 선택합니다.</li>
+  <li>변경할 항목을 수정합니다.</li>
+  <li>'저장' 버튼을 선택합니다.</li>
+</ol>
+
+<div class="callout warn">
+  <span class="label">주의</span> 훈련기간·모집인원 등 <strong>핵심 정보의 수정은 관계기관 신고 사항일 수 있습니다.</strong> 수정 전 행정 담당자와 협의합니다.
+</div>
+
+<h2>4.5 과정 상태 변경 · 삭제</h2>
+<div class="callout must">
+  <span class="label">필수</span> 과정 삭제는 <strong>복구가 불가능</strong>합니다. 삭제 대신 '비활성화' 또는 '종료' 상태로 변경하는 것을 권장합니다. 삭제 권한은 총괄 관리자에게만 부여됩니다. <span class="tag must">권한 확인 필요</span>
+</div>
+
+<!-- ============================================================
+     5장. 학생 관리
+     ============================================================ -->
+<h1 class="chapter" id="ch5"><span class="num">CHAPTER 05</span>학생 관리</h1>
+
+<h2>5.1 학생 목록 조회</h2>
+
+<h4>접근 경로</h4>
+<span class="path">관리자 대시보드 <span class="sep">→</span> 학생관리 <span class="sep">→</span> 전체 학생</span>
+
+<ol class="steps">
+  <li>좌측 메뉴에서 '학생관리'를 선택합니다.</li>
+  <li>검색 조건(이름, 아이디, 과정, 상태)을 입력합니다.</li>
+  <li>'검색' 버튼을 선택하여 목록을 조회합니다.</li>
+</ol>
+
+<div class="capture">
+  <div class="fig-num">그림 5-1</div>
+  <div class="fig-title">학생 목록 조회 화면</div>
+  <div class="fig-hint">검색 조건 영역(파란 박스) · 목록 컬럼 · 상세 진입 버튼(빨간 박스) · 개인정보 모자이크 처리 필수</div>
+</div>
+
+<h2>5.2 신규 학생 등록</h2>
+<h4>입력 항목</h4>
+<table>
+  <thead>
+    <tr><th>항목명</th><th class="center" style="width:12%">필수 여부</th><th>입력 방법</th><th>주의사항</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>이름</td><td class="center"><span class="tag must">필수</span></td><td>직접 입력</td><td>주민등록상 이름</td></tr>
+    <tr><td>생년월일</td><td class="center"><span class="tag must">필수</span></td><td>날짜 선택</td><td>개인정보 취급</td></tr>
+    <tr><td>연락처</td><td class="center"><span class="tag must">필수</span></td><td>숫자 입력</td><td>본인 명의 확인</td></tr>
+    <tr><td>이메일</td><td class="center"><span class="tag must">필수</span></td><td>직접 입력</td><td>로그인 계정 발급용</td></tr>
+    <tr><td>배정 과정</td><td class="center"><span class="tag must">필수</span></td><td>드롭다운 선택</td><td>중복 배정 확인</td></tr>
+    <tr><td>기타 개인정보</td><td class="center"><span class="tag warn">선택</span></td><td>-</td><td><span class="tag must">담당자 확인 필요</span></td></tr>
+  </tbody>
+</table>
+
+<h2>5.3 과정 배정 및 수강 상태 관리</h2>
+<table>
+  <thead>
+    <tr><th class="center" style="width:20%">상태값</th><th>의미</th><th>처리 시점</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="center">수강 중</td><td>정상 수강 상태</td><td>개강 후</td></tr>
+    <tr><td class="center">중도탈락</td><td>훈련 종료 전 하차</td><td>사유 발생 즉시</td></tr>
+    <tr><td class="center">수료</td><td>훈련 정상 완료</td><td>종강 후</td></tr>
+    <tr><td class="center">미수료</td><td>출석·평가 미달</td><td>종강 후</td></tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <span class="label">주의</span> 중도탈락·수료 처리는 <strong>관계기관 보고 및 정산과 직결</strong>됩니다. 반드시 근거 문서를 확보한 후 상태를 변경합니다.
+</div>
+
+<h2>5.4 개인정보 취급 주의사항</h2>
+<div class="callout must">
+  <span class="label">필수</span>
+  <ul>
+    <li>학생정보 조회·다운로드 시 <strong>업무 목적을 명확히</strong> 하고, 개인정보 이용 기록을 남깁니다.</li>
+    <li>다운로드한 파일은 즉시 <strong>암호화·비밀번호 설정</strong>합니다.</li>
+    <li>업무 종료 후 다운로드 파일은 <strong>즉시 삭제</strong>합니다.</li>
+    <li>화면 캡처·문서 공유 시 개인정보는 반드시 마스킹합니다.</li>
+  </ul>
+</div>
+
+<!-- ============================================================
+     6장. 강사 관리
+     ============================================================ -->
+<h1 class="chapter" id="ch6"><span class="num">CHAPTER 06</span>강사 관리</h1>
+
+<h2>6.1 강사 목록 조회</h2>
+<span class="path">관리자 대시보드 <span class="sep">→</span> 강사관리 <span class="sep">→</span> 전체 강사</span>
+
+<ol class="steps">
+  <li>좌측 메뉴에서 '강사관리'를 선택합니다.</li>
+  <li>검색 조건(이름, 담당 과정, 계약 상태)을 입력합니다.</li>
+  <li>'검색' 버튼을 선택합니다.</li>
+</ol>
+
+<div class="capture">
+  <div class="fig-num">그림 6-1</div>
+  <div class="fig-title">강사 목록 조회 화면</div>
+  <div class="fig-hint">검색 · 필터 · 담당 과정 표시 컬럼</div>
+</div>
+
+<h2>6.2 신규 강사 등록</h2>
+<table>
+  <thead>
+    <tr><th>항목명</th><th class="center" style="width:12%">필수 여부</th><th>주의사항</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>이름</td><td class="center"><span class="tag must">필수</span></td><td>계약서 상 이름</td></tr>
+    <tr><td>연락처 / 이메일</td><td class="center"><span class="tag must">필수</span></td><td>계정 발급용</td></tr>
+    <tr><td>담당 과정</td><td class="center"><span class="tag warn">선택</span></td><td>복수 배정 가능 <span class="tag must">확인 필요</span></td></tr>
+    <tr><td>강사 권한</td><td class="center"><span class="tag must">필수</span></td><td>클래스룸 접근 범위 결정</td></tr>
+    <tr><td>경력·전공 등</td><td class="center"><span class="tag warn">선택</span></td><td>-</td></tr>
+  </tbody>
+</table>
+
+<h2>6.3 담당 과정 배정 및 변경</h2>
+<ol class="steps">
+  <li>강사 상세 화면에서 '담당 과정' 영역으로 이동합니다.</li>
+  <li>'과정 추가' 버튼을 선택합니다.</li>
+  <li>과정을 검색하여 선택합니다.</li>
+  <li>'저장' 버튼을 선택합니다.</li>
+</ol>
+
+<h2>6.4 퇴사·계약 종료 처리</h2>
+<div class="callout warn">
+  <span class="label">주의</span> 강사 삭제 시 기존에 등록한 <strong>수업자료·게시물·콘텐츠의 소유권이 어떻게 처리되는지 사전 확인</strong> 후 진행합니다. 삭제보다 '비활성화' 처리를 권장합니다. <span class="tag must">담당자 확인 필요</span>
+</div>
+
+<!-- ============================================================
+     7장. 클래스룸 운영
+     ============================================================ -->
+<h1 class="chapter" id="ch7"><span class="num">CHAPTER 07</span>클래스룸 운영</h1>
+
+<h2>7.1 과정별 클래스룸 접속</h2>
+<ol class="steps">
+  <li>전체 강의 목록에서 대상 과정을 선택합니다.</li>
+  <li>과정 상세 화면에서 '클래스룸 이동' 버튼을 선택합니다. <span class="tag info">버튼명 확인 필요</span></li>
+  <li>해당 과정의 클래스룸 메인 화면이 표시됩니다.</li>
+</ol>
+
+<div class="capture">
+  <div class="fig-num">그림 7-1</div>
+  <div class="fig-title">과정별 클래스룸 메인 화면</div>
+  <div class="fig-hint">참여자 · 공지 · 커뮤니티 · 수업자료 · 콘텐츠 탭 위치 강조</div>
+</div>
+
+<h2>7.2 참여자 확인</h2>
+<p>클래스룸에 참여 중인 훈련생과 강사 목록을 확인합니다. 개강 당일 접속 여부 점검 시 활용합니다.</p>
+
+<h2>7.3 공지 등록</h2>
+<ol class="steps">
+  <li>클래스룸 상단의 '공지' 탭을 선택합니다.</li>
+  <li>'+ 새 공지' 버튼을 선택합니다.</li>
+  <li>제목·내용을 입력합니다.</li>
+  <li>중요 공지 여부, 게시 기간을 설정합니다. <span class="tag info">옵션 확인 필요</span></li>
+  <li>'등록' 버튼을 선택합니다.</li>
+</ol>
+
+<h2>7.4 커뮤니티 채널 관리</h2>
+<p>과정별로 여러 채널을 두어 자유게시판·질문답변·자료실 등으로 분리 운영할 수 있습니다.</p>
+
+<div class="capture">
+  <div class="fig-num">그림 7-2</div>
+  <div class="fig-title">커뮤니티 채널 구성 화면</div>
+  <div class="fig-hint">채널 목록 · 게시물 작성/수정/삭제 버튼 강조</div>
+</div>
+
+<h2>7.5 수업자료 등록</h2>
+<ol class="steps">
+  <li>클래스룸의 '수업자료' 탭을 선택합니다.</li>
+  <li>'+ 자료 등록' 버튼을 선택합니다.</li>
+  <li>제목, 설명, 첨부파일 또는 링크를 입력합니다.</li>
+  <li>공개 범위(전체 / 특정 회차)를 설정합니다. <span class="tag info">옵션 확인 필요</span></li>
+  <li>'등록' 버튼을 선택합니다.</li>
+</ol>
+
+<div class="callout warn">
+  <span class="label">주의</span> 저작권이 있는 자료(도서 스캔본, 유료 강의 자료 등)는 <strong>업로드 금지</strong>입니다. 반드시 자체 제작 또는 허가된 자료만 등록합니다.
+</div>
+
+<!-- ============================================================
+     8장. 콘텐츠 관리
+     ============================================================ -->
+<h1 class="chapter" id="ch8"><span class="num">CHAPTER 08</span>콘텐츠 관리</h1>
+
+<h2>8.1 콘텐츠 유형</h2>
+<table>
+  <thead>
+    <tr><th style="width:22%">유형</th><th>용도</th><th>등록 방법</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Zoom 녹화영상</td><td>실시간 수업 녹화본 제공</td><td>Zoom 공유 링크 등록</td></tr>
+    <tr><td>YouTube 영상</td><td>참고 자료·강의 보충</td><td>YouTube URL 등록</td></tr>
+    <tr><td>외부 링크</td><td>참고 사이트 · 문서</td><td>URL 등록</td></tr>
+    <tr><td>기타 파일</td><td>PDF · 이미지 등</td><td>파일 업로드 <span class="tag must">확인 필요</span></td></tr>
+  </tbody>
+</table>
+
+<h2>8.2 Zoom 녹화영상 등록</h2>
+<ol class="steps">
+  <li>Zoom 클라우드에서 녹화 파일의 공유 링크를 복사합니다.</li>
+  <li>클래스룸 → '콘텐츠' 탭 → '+ 콘텐츠 등록' 버튼을 선택합니다.</li>
+  <li>유형에서 'Zoom 녹화영상'을 선택합니다.</li>
+  <li>제목(수업 회차·주제)과 링크를 입력합니다.</li>
+  <li>'등록' 버튼을 선택합니다.</li>
+  <li>등록 후 <strong>링크가 정상적으로 열리는지 반드시 확인</strong>합니다.</li>
+</ol>
+
+<div class="callout warn">
+  <span class="label">주의</span>
+  <ul>
+    <li>Zoom 링크는 <strong>비밀번호가 포함된 링크</strong>여야 훈련생이 열람할 수 있습니다.</li>
+    <li>Zoom 클라우드는 <strong>저장 기간이 제한</strong>됩니다. 장기 보관이 필요한 자료는 별도 다운로드 후 보관합니다.</li>
+  </ul>
+</div>
+
+<div class="capture">
+  <div class="fig-num">그림 8-1</div>
+  <div class="fig-title">Zoom 녹화영상 등록 화면</div>
+  <div class="fig-hint">유형 선택 · 제목 입력 · 링크 입력 · 등록 버튼 강조</div>
+</div>
+
+<h2>8.3 YouTube 영상 등록</h2>
+<ol class="steps">
+  <li>YouTube 영상 페이지에서 '공유' → URL을 복사합니다.</li>
+  <li>콘텐츠 등록 화면에서 유형 'YouTube'를 선택합니다.</li>
+  <li>제목과 URL을 입력합니다.</li>
+  <li>'등록' 버튼을 선택합니다.</li>
+</ol>
+
+<h2>8.4 콘텐츠 수정·삭제</h2>
+<p>콘텐츠 목록에서 대상 항목을 선택 후 '수정' 또는 '삭제' 버튼을 선택합니다. 삭제 시 <strong>복구가 불가</strong>하므로 신중히 진행합니다.</p>
+
+<!-- ============================================================
+     9장. 과정 TODO 관리
+     ============================================================ -->
+<h1 class="chapter" id="ch9"><span class="num">CHAPTER 09</span>과정 TODO 관리</h1>
+
+<h2>9.1 TODO의 목적</h2>
+<p>과정 운영에 필요한 업무를 단계별로 관리하고, 담당자·마감일·상태를 명확히 하여 <strong>누락 없는 과정 운영</strong>을 지원합니다.</p>
+
+<h2>9.2 신규 TODO 등록</h2>
+<ol class="steps">
+  <li>과정 상세 화면에서 'TODO' 탭 또는 대시보드 TODO 영역으로 이동합니다.</li>
+  <li>'+ 새 TODO' 버튼을 선택합니다.</li>
+  <li>제목·내용·담당자·마감일을 입력합니다.</li>
+  <li>'등록' 버튼을 선택합니다.</li>
+</ol>
+
+<h2>9.3 상태값 및 관리 방법</h2>
+<table>
+  <thead>
+    <tr><th class="center" style="width:14%">상태</th><th>의미</th><th>사용 시점</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="center"><span class="tag info">대기</span></td><td>등록됐지만 시작 전</td><td>업무 등록 직후</td></tr>
+    <tr><td class="center"><span class="tag warn">진행 중</span></td><td>현재 진행 중</td><td>담당자 착수 시점</td></tr>
+    <tr><td class="center"><span class="tag ok">완료</span></td><td>업무 완료</td><td>결과물 확인 후</td></tr>
+    <tr><td class="center"><span class="tag must">보류</span></td><td>일시 중단</td><td>외부 대기·조건 미충족</td></tr>
+  </tbody>
+</table>
+
+<div class="callout must">
+  <span class="label">필수</span> 과정 종료 전 반드시 <strong>미완료 TODO 잔여 여부를 점검</strong>합니다. 미완료 상태로 남을 경우 사후 감사 시 문제가 될 수 있습니다.
+</div>
+
+<!-- ============================================================
+     10장. 운영자별 업무 가이드
+     ============================================================ -->
+<h1 class="chapter" id="ch10"><span class="num">CHAPTER 10</span>운영자별 업무 가이드</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:14%">담당자</th>
+      <th style="width:22%">주요 메뉴</th>
+      <th>주요 업무</th>
+      <th style="width:18%">사용 시점</th>
+      <th style="width:20%">주의사항</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>총괄 관리자</td>
+      <td>전체 메뉴 · 강사 · 학생 · 강의</td>
+      <td>계정 발급, 권한 관리, 과정 승인, 삭제 권한 행사</td>
+      <td>수시</td>
+      <td>삭제·권한 변경 복구 불가</td>
+    </tr>
+    <tr>
+      <td>교육 운영 담당자</td>
+      <td>강의관리 · 클래스룸 · TODO</td>
+      <td>과정 등록, 강사·훈련생 배정, 클래스룸 개설, TODO 관리</td>
+      <td>개강 전 · 훈련 중</td>
+      <td>훈련기간·인원 변경 신중</td>
+    </tr>
+    <tr>
+      <td>행정 담당자</td>
+      <td>학생관리 · TODO · 콘텐츠</td>
+      <td>훈련생 등록, 출결·수료 처리, 자료 다운로드</td>
+      <td>매주 · 종강 전후</td>
+      <td>개인정보 취급 유의</td>
+    </tr>
+    <tr>
+      <td>교강사</td>
+      <td>클래스룸 · 콘텐츠 · 커뮤니티</td>
+      <td>수업자료·공지·녹화영상 등록, 학생 질의응답</td>
+      <td>훈련 중 매일</td>
+      <td>저작권 자료 업로드 금지</td>
+    </tr>
+    <tr>
+      <td>취업지원 담당자</td>
+      <td>학생관리(수료생) · 콘텐츠</td>
+      <td>수료생 정보 조회, 사후 관리 콘텐츠 등록</td>
+      <td>종강 후</td>
+      <td>개인정보 목적 외 사용 금지</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ============================================================
+     11장. 시기별 운영 체크리스트
+     ============================================================ -->
+<h1 class="chapter" id="ch11"><span class="num">CHAPTER 11</span>시기별 운영 체크리스트</h1>
+
+<h2>11.1 개강 전 체크리스트</h2>
+<table>
+  <thead><tr><th style="width:5%" class="center">☐</th><th>확인 항목</th><th style="width:25%">담당</th></tr></thead>
+  <tbody>
+    <tr><td class="center">☐</td><td>과정정보 등록 (과정명·회차·훈련기간)</td><td>운영 담당자</td></tr>
+    <tr><td class="center">☐</td><td>모집인원 설정 및 실제 등록인원 확인</td><td>운영 담당자</td></tr>
+    <tr><td class="center">☐</td><td>담당 강사 배정 및 계정 발급</td><td>총괄 관리자</td></tr>
+    <tr><td class="center">☐</td><td>훈련생 등록 및 과정 배정</td><td>행정 담당자</td></tr>
+    <tr><td class="center">☐</td><td>클래스룸 개설 확인</td><td>운영 담당자</td></tr>
+    <tr><td class="center">☐</td><td>커뮤니티 채널 구성</td><td>운영 담당자 · 강사</td></tr>
+    <tr><td class="center">☐</td><td>개강 안내 공지 등록</td><td>운영 담당자</td></tr>
+  </tbody>
+</table>
+
+<h2>11.2 개강 당일 체크리스트</h2>
+<table>
+  <tbody>
+    <tr><td class="center" style="width:5%">☐</td><td>등록인원 최종 확인</td></tr>
+    <tr><td class="center">☐</td><td>학생 클래스룸 접속 여부 확인</td></tr>
+    <tr><td class="center">☐</td><td>담당 강사 로그인 및 권한 확인</td></tr>
+    <tr><td class="center">☐</td><td>1일차 수업자료 등록 확인</td></tr>
+    <tr><td class="center">☐</td><td>공지사항 게시 확인</td></tr>
+  </tbody>
+</table>
+
+<h2>11.3 훈련 중 체크리스트 (주 1회)</h2>
+<table>
+  <tbody>
+    <tr><td class="center" style="width:5%">☐</td><td>등록인원 및 상태(중도탈락) 확인</td></tr>
+    <tr><td class="center">☐</td><td>커뮤니티 활동·질문 응대 상태 확인</td></tr>
+    <tr><td class="center">☐</td><td>주간 수업자료·콘텐츠 등록 확인</td></tr>
+    <tr><td class="center">☐</td><td>Zoom 녹화자료 등록 및 링크 정상 확인</td></tr>
+    <tr><td class="center">☐</td><td>TODO 진행 상태 갱신</td></tr>
+  </tbody>
+</table>
+
+<h2>11.4 종강 전 체크리스트</h2>
+<table>
+  <tbody>
+    <tr><td class="center" style="width:5%">☐</td><td>미완료 TODO 잔여 확인 및 처리</td></tr>
+    <tr><td class="center">☐</td><td>콘텐츠 누락(회차별 녹화) 확인</td></tr>
+    <tr><td class="center">☐</td><td>훈련생 상태(수료 예정·미수료 예정) 확인</td></tr>
+    <tr><td class="center">☐</td><td>커뮤니티 자료·게시물 정리</td></tr>
+    <tr><td class="center">☐</td><td>수료 처리 근거 문서 준비</td></tr>
+  </tbody>
+</table>
+
+<h2>11.5 종강 후 체크리스트</h2>
+<table>
+  <tbody>
+    <tr><td class="center" style="width:5%">☐</td><td>과정 상태를 '종료'로 변경</td></tr>
+    <tr><td class="center">☐</td><td>최종 자료 확인 및 보관</td></tr>
+    <tr><td class="center">☐</td><td>미처리 학생 상태 정리 (수료/미수료)</td></tr>
+    <tr><td class="center">☐</td><td>클래스룸 보관 처리 확인</td></tr>
+    <tr><td class="center">☐</td><td>개인정보 및 자료 보존 기준에 따른 정리</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================================================
+     12장. 오류 및 FAQ
+     ============================================================ -->
+<h1 class="chapter" id="ch12"><span class="num">CHAPTER 12</span>오류 대응 및 자주 묻는 질문</h1>
+
+<h2>12.1 자주 발생하는 오류와 해결 방법</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:18%">증상</th>
+      <th style="width:18%">예상 원인</th>
+      <th style="width:22%">확인 방법</th>
+      <th style="width:22%">해결 방법</th>
+      <th style="width:20%">문의 대상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>로그인이 되지 않음</td>
+      <td>계정 잠금·비밀번호 오류</td>
+      <td>Caps Lock, 오입력 5회 여부</td>
+      <td>비밀번호 재설정 요청</td>
+      <td>총괄 관리자 / 플로우업 지원</td>
+    </tr>
+    <tr>
+      <td>메뉴가 보이지 않음</td>
+      <td>권한 미부여</td>
+      <td>다른 담당자 화면과 비교</td>
+      <td>권한 요청</td>
+      <td>총괄 관리자</td>
+    </tr>
+    <tr>
+      <td>과정이 조회되지 않음</td>
+      <td>검색조건·상태 필터 누락</td>
+      <td>필터 초기화 후 재검색</td>
+      <td>전체 상태로 재검색</td>
+      <td>운영 담당자</td>
+    </tr>
+    <tr>
+      <td>학생/강사가 검색되지 않음</td>
+      <td>등록 미완료·오탈자</td>
+      <td>부분 검색어로 재조회</td>
+      <td>신규 등록 여부 확인 후 등록</td>
+      <td>행정 담당자</td>
+    </tr>
+    <tr>
+      <td>중복 등록 메시지</td>
+      <td>기존 등록 존재</td>
+      <td>기존 학생 상세 확인</td>
+      <td>과정 배정으로 변경</td>
+      <td>행정 담당자</td>
+    </tr>
+    <tr>
+      <td>저장 버튼이 작동하지 않음</td>
+      <td>필수 항목 미입력</td>
+      <td>붉은 표시 필드 확인</td>
+      <td>필수 항목 입력 후 재시도</td>
+      <td>본인 재시도</td>
+    </tr>
+    <tr>
+      <td>콘텐츠 링크가 열리지 않음</td>
+      <td>URL 오입력·접근권한</td>
+      <td>브라우저 시크릿 모드 시도</td>
+      <td>링크 수정 또는 재발행</td>
+      <td>등록 담당자</td>
+    </tr>
+    <tr>
+      <td>Zoom 영상에 접근 불가</td>
+      <td>비밀번호 미포함 링크·저장기간 만료</td>
+      <td>Zoom 클라우드 확인</td>
+      <td>비밀번호 포함 링크 재등록</td>
+      <td>강사 / 운영 담당자</td>
+    </tr>
+    <tr>
+      <td>권한 부족 메시지</td>
+      <td>기능별 권한 미부여</td>
+      <td>메뉴 접근 로그 확인</td>
+      <td>권한 신청</td>
+      <td>총괄 관리자</td>
+    </tr>
+    <tr>
+      <td>수정한 내용이 반영되지 않음</td>
+      <td>저장 미완료·캐시</td>
+      <td>새로고침(F5) 후 재확인</td>
+      <td>재저장, 캐시 삭제</td>
+      <td>본인 재시도</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>12.2 자주 묻는 질문 (FAQ)</h2>
+
+<h3>Q1. 모집 중 과정과 훈련 중 과정은 어떻게 구분하나요?</h3>
+<p>과정의 훈련기간 시작일 이전은 '모집 중', 시작일 이후 종료일 이전은 '훈련 중', 종료일 이후는 '종료' 상태로 자동 구분됩니다. 상세 상태값은 시스템 화면 확인 필요.</p>
+
+<h3>Q2. 학생을 잘못된 과정에 등록했을 때 어떻게 처리하나요?</h3>
+<p>학생 상세 화면에서 '배정 과정'을 올바른 과정으로 변경합니다. 이미 훈련이 시작된 경우 <strong>출결·수업참여 기록에 영향</strong>이 있으므로 행정 담당자와 반드시 협의합니다.</p>
+
+<h3>Q3. 강사를 여러 과정에 배정할 수 있나요?</h3>
+<p>강사 상세 화면의 '담당 과정' 영역에서 복수 과정 배정이 가능합니다. <span class="tag must">실제 지원 여부 확인 필요</span></p>
+
+<h3>Q4. Zoom 녹화영상은 어디에 등록하나요?</h3>
+<p>해당 과정의 클래스룸 → '콘텐츠' 탭 → '+ 콘텐츠 등록' → 유형 'Zoom 녹화영상' 선택 후 링크를 입력합니다.</p>
+
+<h3>Q5. 게시물을 삭제하면 복구할 수 있나요?</h3>
+<p>일반적으로 삭제된 게시물은 <strong>복구가 불가</strong>합니다. 삭제 전 반드시 백업이 필요한지 확인합니다.</p>
+
+<h3>Q6. 과정 TODO의 '보류' 상태는 언제 사용하나요?</h3>
+<p>외부 승인 대기, 자료 확보 지연 등 <strong>담당자가 조치할 수 없는 이유</strong>로 업무를 진행할 수 없을 때 사용합니다. 보류 사유를 반드시 기록합니다.</p>
+
+<h3>Q7. 과정 종료 후에도 클래스룸을 확인할 수 있나요?</h3>
+<p>종료된 과정의 클래스룸은 조회 목적으로 접근 가능합니다. 단, 편집·자료 추가 등의 기능이 제한될 수 있습니다. <span class="tag must">확인 필요</span></p>
+
+<h3>Q8. 메뉴가 보이지 않을 때 누구에게 문의하나요?</h3>
+<p>먼저 다른 담당자 화면과 비교하여 권한 문제인지 확인 후, <strong>총괄 관리자</strong>에게 권한 부여를 요청합니다.</p>
+
+<h3>Q9. 개인정보를 다운로드해야 하는 상황에는 어떻게 하나요?</h3>
+<p>업무 목적과 근거를 명확히 하고, 다운로드한 파일은 즉시 <strong>암호화 또는 비밀번호 설정</strong>합니다. 업무 종료 후에는 반드시 삭제합니다.</p>
+
+<h3>Q10. 훈련기간을 잘못 등록했을 때 수정할 수 있나요?</h3>
+<p>과정 상세에서 수정 가능하지만, <strong>이미 등록된 훈련생·수업자료·정산에 영향</strong>을 줄 수 있습니다. 수정 전 반드시 행정 담당자와 협의합니다.</p>
+
+<h3>Q11. 강사 계정이 있는데 클래스룸에 접속되지 않아요.</h3>
+<p>담당 과정 배정 여부를 확인합니다. 배정되지 않은 과정의 클래스룸은 접근할 수 없습니다.</p>
+
+<h3>Q12. 커뮤니티 게시물에 파일을 첨부할 수 있나요?</h3>
+<p><span class="tag must">지원 여부 및 파일 크기 제한 확인 필요</span></p>
+
+<h3>Q13. 훈련생이 로그인을 못 한다고 문의합니다. 어떻게 해야 하나요?</h3>
+<p>훈련생의 아이디·비밀번호 발급 여부와 등록 상태(수강 중)를 확인합니다. 비밀번호 초기화가 필요한 경우 담당자를 통해 재설정합니다.</p>
+
+<h3>Q14. 콘텐츠에 등록한 링크가 만료되었어요.</h3>
+<p>기존 링크를 삭제하지 말고 '수정' 기능으로 새 링크를 갱신합니다. 훈련생 열람 기록이 유지됩니다. <span class="tag must">동작 확인 필요</span></p>
+
+<h3>Q15. 매뉴얼에 없는 기능이 시스템에 있을 때 어떻게 하나요?</h3>
+<p>임의로 기능을 사용하기 전에 총괄 관리자 또는 플로우업 지원팀에 문의하여 정확한 사용 방법을 확인합니다.</p>
+
+<hr>
+
+<h2>부록 · 관리자 문의 전 확인사항</h2>
+<div class="callout ok">
+  <span class="label">CHECK</span> 문의 전 아래 정보를 정리하면 빠른 답변을 받을 수 있습니다.
+  <ul>
+    <li>사용 중인 브라우저와 버전</li>
+    <li>발생한 화면의 URL과 캡처</li>
+    <li>오류 메시지 원문</li>
+    <li>발생 시각과 재현 방법</li>
+    <li>본인의 계정 권한 유형</li>
+  </ul>
+</div>
+
+<h2>부록 · 추가 확인이 필요한 기능 목록</h2>
+<p>본 매뉴얼 v0.9 작성 시점 기준, <strong>실제 화면 확인 후 확정이 필요한 항목</strong>입니다.</p>
+<ul>
+  <li>로그인 화면의 정확한 필드 구성 및 비밀번호 찾기 여부</li>
+  <li>세션 자동 종료 시간</li>
+  <li>과정 등록 시 실제 입력 필드 전체 목록 및 필수 여부</li>
+  <li>강사 복수 과정 배정 지원 여부</li>
+  <li>클래스룸 접근 경로 및 버튼명</li>
+  <li>수업자료 파일 업로드 지원 형식·크기 제한</li>
+  <li>커뮤니티 게시물 파일 첨부 지원 여부</li>
+  <li>종료 과정 클래스룸의 편집 제한 범위</li>
+  <li>과정 삭제 vs 비활성화 정책</li>
+  <li>강사 퇴사 시 기존 자료 소유권 이전 방법</li>
+</ul>
+
+<hr>
+
+<p class="muted" style="text-align:center; font-size:13px; margin-top:48px;">
+본 매뉴얼은 플로우업 관리자 시스템의 실제 화면을 기준으로 작성되었습니다.<br>
+시스템 업데이트 또는 사용자 권한에 따라 메뉴와 기능이 다르게 표시될 수 있습니다.<br>
+<br>
+<span style="font-family:var(--f-mono); font-size:11px;">© 이젠아카데미 · FLOWUP Administrator Manual v0.9 · 2026-09-18</span>
+</p>
+
+</div><!-- /.page -->
+</div><!-- /.doc-layout -->
+
+<script src="../assets/toc.js?v=4"></script>
+</body>
+</html>
