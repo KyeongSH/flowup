@@ -1,6 +1,6 @@
 $schema: https://api.gitbook.com/gitbook-docs.yaml
 site:
-  title: ecrewdx.github.io/
+  title: ezen.github.io/
   structure:
     - type: space
       key: space-1
